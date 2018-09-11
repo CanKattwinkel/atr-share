@@ -135,6 +135,7 @@ COMMIT!
     
     ```
 5.2 die "menuMock" Variable in MenuComponent#items und zeige sie im Template an, Installiere auch das Grid von Bootstrap ode passe die CSS Klassen an (reboot, grid, utilities):
+
     ```html
     <a
       *ngFor="let item of items"
@@ -164,3 +165,45 @@ COMMIT!
 6.6 Überprüfe das Ergebnis im Browser: kein Runtime Fehler  & Sidebar erweitert sich sofort bei Klick
 
 COMMIT! 
+
+
+
+
+
+7 Animation Vorbereitung
+7.1 Erweitere den MenuComponent:
+
+    ```
+    const animationDuration = 500;
+    
+    @Component({
+      selector: 'app-menu',
+      templateUrl: './menu.component.html',
+      styleUrls: ['./menu.component.scss'],
+      animations: [
+        trigger('sidenavTransition', [
+          state('inactive', style({
+            width: '52px',
+          })),
+          state('active', style({
+            width: '250px',
+          })),
+          transition('inactive => active', animate(`${animationDuration}ms ease-in`)),
+          transition('active => inactive', animate(`${animationDuration}ms ease-out`))
+        ])
+      ]
+    
+    })
+    ```
+7.2 Setze über ein HostBinding die SidenavTransaction und erfüle in der Methode die Signatur
+
+    ```
+ 
+    @HostBinding('@sidenavTransition') get sidenavTransition(): 'inactive'  |  'active' {
+    }
+    
+      
+    ```
+7.3 Überprüfe das Ergebnis im Browser: kein Runtime Fehler  & Sidebar erweitert sich animiert bei Klick - content springt
+
+
