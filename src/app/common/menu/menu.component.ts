@@ -6,7 +6,7 @@ import {merge, of, Subject, timer} from 'rxjs';
 import {animationFrame} from 'rxjs/internal/scheduler/animationFrame';
 import {repeat, takeUntil} from 'rxjs/operators';
 
-const animationDuration = 2000;
+const animationDuration = 250;
 
 @Component({
   selector: 'app-menu',
@@ -55,7 +55,7 @@ export class MenuComponent implements OnInit {
           merge(timer(animationDuration), this.stop$),
         ),
       )
-      .subscribe(() => this.cdf.markForCheck(), null, () => alert(1));
+      .subscribe(() => this.cdf.markForCheck(), null, () => console.log("complete"));
 
     this.isExpanded = !this.isExpanded;
   }
