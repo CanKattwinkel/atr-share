@@ -15,7 +15,28 @@ COMMIT!
 3.1 mat-sidenav-container.page[autosize]>.content+mat-sidenav.sidenav[opened=true][mode=side]>app-menu im app Menu, verschachtel das router-outlet korrekt
 3.2 Binde das MatSidenavModule ein
 3.3 Erstelle die Komponente app-menu unter app/common/ in einem eigenen Modul (MenuModul) (Export!)
-3.4 Überprüfe das Ergebnis im Browser ("menu works!" & kein Runtime Fehler)
+3.5 Lass .content scrollen (AppComponent)
+    ```scss
+    .page {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+    }
+    
+    .content {
+      height: 100%;
+    }
+    
+    .sidenav{
+      height: 100%;
+    }
+    
+    
+    ```
+3.6 Setze zudem den Body auf overflow hidden (GLOBAL!)
+3.7 Überprüfe das Ergebnis im Browser ("menu works!", content scrollt & kein Runtime Fehler)
 
 COMMIT! 
 
