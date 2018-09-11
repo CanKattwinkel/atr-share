@@ -1,8 +1,12 @@
-import {Component, HostBinding, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, HostBinding, OnInit} from '@angular/core';
 import {menuMock} from '../../menu.mock';
 import {Menu} from '../../menu.model';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-const animationDuration = 500;
+import {merge, of, Subject, timer} from 'rxjs';
+import {animationFrame} from 'rxjs/internal/scheduler/animationFrame';
+import {repeat, takeUntil} from 'rxjs/operators';
+
+const animationDuration = 2000;
 
 @Component({
   selector: 'app-menu',
@@ -28,16 +32,31 @@ export class MenuComponent implements OnInit {
   @HostBinding('class.menu-expanded')
   isExpanded: boolean;
 
+  stop$ = new Subject<void>();
+
   @HostBinding('@sidenavTransition') get sidenavTransition(): 'inactive'  |  'active' {
     return this.isExpanded ? 'active' : 'inactive';
   }
 
-  constructor() { }
+  constructor(private cdf: ChangeDetectorRef) {
+  }
 
   ngOnInit() {
   }
 
+
   toggle(): void {
+
+    this.stop$.next();
+    of(0, animationFrame)
+      .pipe(
+        repeat(),
+        takeUntil(
+          merge(timer(animationDuration), this.stop$),
+        ),
+      )
+      .subscribe(() => this.cdf.markForCheck(), null, () => alert(1));
+
     this.isExpanded = !this.isExpanded;
   }
 

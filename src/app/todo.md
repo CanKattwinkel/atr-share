@@ -206,4 +206,27 @@ COMMIT!
     ```
 7.3 Überprüfe das Ergebnis im Browser: kein Runtime Fehler  & Sidebar erweitert sich animiert bei Klick - content springt
 
+COMMIT! 
 
+
+8 Abrunden
+8.1 Füge den ChangeDetectorFix hinzu
+    ```
+     of(0, animationFrame)
+          .pipe(
+            repeat(),
+            takeUntil(
+              timer(animationDuration),
+            ),
+          )
+          .subscribe(() => this.cdf.markForCheck());
+          
+    
+    ```
+8.2 Beweise das dieser Stream kein Menory Leak erzeugt
+8.3 Bonusaufgabe: Stoppe den "alten Stream" bei jedem erneuten Klick auf toggle. Dazu benötigst du ein Subject, und den operator `merge()`.
+    Zum Beweis kanst du die animationDuration auf 2 Sekunden stellen.
+
+8.4 Done!
+
+COMMIT! 
