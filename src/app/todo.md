@@ -154,3 +154,13 @@ COMMIT!
 
 
 
+
+6 Statisches auf und zu klappen:
+6.1 Führe im MenuComponent das boolsche Feld isExpanded ein.
+6.2 Toggle dieses in der Toggle Methode
+6.3 Setze eine Klasse im CSS wenn isExpanded = true
+6.4 Setze für das Host Element eine Breite von 50 Pixeln
+6.5 Wenn auf dem Host Element die Klasse 'menu-expanded' gesetzt ist, setze die Breite auf 250 Pixel
+6.6 Überprüfe das Ergebnis im Browser: kein Runtime Fehler  & Sidebar erweitert sich sofort bei Klick
+
+COMMIT! 

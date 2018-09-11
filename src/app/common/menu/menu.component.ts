@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
 import {menuMock} from '../../menu.mock';
 import {Menu} from '../../menu.model';
 
@@ -11,12 +11,16 @@ export class MenuComponent implements OnInit {
 
   items: Menu = menuMock;
 
+  @HostBinding('class.menu-expanded')
+  isExpanded: boolean;
+
   constructor() { }
 
   ngOnInit() {
   }
 
   toggle(): void {
+    this.isExpanded = !this.isExpanded;
   }
 
 }

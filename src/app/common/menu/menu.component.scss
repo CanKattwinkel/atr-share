@@ -10,6 +10,12 @@ $active: mat-color($app-accent, 500);
   background-color: $primary;
   min-height: 100%;
   overflow-x: hidden;
+
+  width: 50px;
+}
+
+:host(.menu-expanded) {
+  width: 250px;
 }
 
 .menu-item {
