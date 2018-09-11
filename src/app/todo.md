@@ -19,3 +19,18 @@ COMMIT!
 
 COMMIT! 
 
+4. Binde in der Menu Component einen Hamburger Button ein, nutze dazu https://www.npmjs.com/package/angular-font-awesome
+4.1 npm i @fortawesome/angular-fontawesome @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons
+4.2 Füge die Icons 'faBars' und 'faCoffee' hinzu
+4.3 Implementiere einen toggle Button in der menu Komponent, der die Bars als Icon nutzt, lege dazu auch eine leere Methode toggle an.
+    ```html
+    <button (click)="toggle()">
+       ...Icon
+    </button>
+    ```
+4.4 Überprüfe das Ergebnis im Browser ("menu works!" + Hamburger & kein Runtime Fehler)
+
+
+COMMIT! 
+
+

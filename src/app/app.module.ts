@@ -6,6 +6,15 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatSidenavModule} from '@angular/material';
 import {MenuModule} from './common/menu/menu.module';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {faBars, faCoffee} from '@fortawesome/free-solid-svg-icons';
+import {library} from '@fortawesome/fontawesome-svg-core';
+
+
+// add single icons:
+library.add(faBars, faCoffee);
+
+
 
 @NgModule({
   declarations: [
@@ -18,6 +27,7 @@ import {MenuModule} from './common/menu/menu.module';
     MatButtonModule,
     MatSidenavModule,
     MenuModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
