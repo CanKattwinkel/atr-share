@@ -1,27 +1,61 @@
 @import "~@angular/material/theming";
 
 /* For use in src/lib/core/theming/_palette.scss */
-$brand-green: (
-  50 : #e0f2f1,
-  100 : #b3e0db,
-  200 : #80cbc4,
-  300 : #4db6ac,
-  400 : #26a69a,
-  500 : #009688,
-  600 : #008e80,
-  700 : #008375,
-  800 : #00796b,
-  900 : #006858,
-  A100 : #97ffec,
-  A200 : #64ffe3,
-  A400 : #31ffda,
-  A700 : #18ffd5,
+$brand-blue: (
+  50 : #e4e7eb,
+  100 : #bbc4cc,
+  200 : #8e9cab,
+  300 : #617489,
+  400 : #3f576f,
+  500 : #1d3956,
+  600 : #1a334f,
+  700 : #152c45,
+  800 : #11243c,
+  900 : #0a172b,
+  A100 : #689cff,
+  A200 : #357bff,
+  A400 : #0259ff,
+  A700 : #0050e7,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #cdd5db,
+    600 : #cdd5db,
+    700 : #cdd5db,
+    800 : #cdd5db,
+    900 : #cdd5db,
+    A100 : #000000,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+
+$brand-shiny-blue: (
+  50 : #e9f0f8,
+  100 : #c7daef,
+  200 : #a2c2e4,
+  300 : #7ca9d9,
+  400 : #6096d0,
+  500 : #4484c8,
+  600 : #3e7cc2,
+  700 : #3571bb,
+  800 : #2d67b4,
+  900 : #1f54a7,
+  A100 : #e0ebff,
+  A200 : #adcbff,
+  A400 : #7aaaff,
+  A700 : #619aff,
   contrast: (
     50 : #000000,
     100 : #000000,
     200 : #000000,
     300 : #000000,
-    400 : #ffffff,
+    400 : #000000,
     500 : #ffffff,
     600 : #ffffff,
     700 : #ffffff,
@@ -34,47 +68,13 @@ $brand-green: (
   )
 );
 
-$brand-blue-gray: (
-  50 : #e9ebec,
-  100 : #c7ced1,
-  200 : #a2adb2,
-  300 : #7d8c93,
-  400 : #61737b,
-  500 : #455a64,
-  600 : #3e525c,
-  700 : #364852,
-  800 : #2e3f48,
-  900 : #1f2e36,
-  A100 : #7dcdff,
-  A200 : #4abaff,
-  A400 : #17a7ff,
-  A700 : #009cfc,
-  contrast: (
-    50 : #000000,
-    100 : #000000,
-    200 : #000000,
-    300 : #000000,
-    400 : #ffffff,
-    500 : #ffffff,
-    600 : #ffffff,
-    700 : #ffffff,
-    800 : #ffffff,
-    900 : #ffffff,
-    A100 : #000000,
-    A200 : #000000,
-    A400 : #000000,
-    A700 : #ffffff,
-  )
-);
-
-
 
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$app-primary: mat-palette($brand-blue-gray);
-$app-accent:  mat-palette($brand-green);
+$app-primary: mat-palette($brand-blue);
+$app-accent:  mat-palette($brand-shiny-blue);
 
 // The warn palette is optional (defaults to red).
 $app-warn:    mat-palette($mat-red);

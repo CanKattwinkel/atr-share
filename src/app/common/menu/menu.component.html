@@ -2,6 +2,13 @@
   <fa-icon [icon]="['fas','bars']"></fa-icon>
 </button>
 
-<p>
-  menu works!
-</p>
+<a
+  *ngFor="let item of items"
+  class="menu-item p-3 item-container d-flex align-items-stretch"
+  [routerLink]="item.target"
+>
+  <fa-icon [icon]="['fas','coffee']"></fa-icon>
+  <div class="label pl-3">
+    {{item.label}}
+  </div>
+</a>

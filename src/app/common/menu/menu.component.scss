@@ -1,0 +1,24 @@
+@import "~@angular/material/theming";
+@import "../../../styling/material/colors";
+
+$primary: mat-color($app-primary, 500);
+$primary-text: mat-contrast($app-primary, 500);
+$active: mat-color($app-accent, 500);
+
+:host {
+  display: block;
+  background-color: $primary;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+.menu-item {
+  padding: 5px;
+  color: $primary-text;
+  text-decoration: none;
+
+  &:hover {
+    color: $active;
+  }
+}
+

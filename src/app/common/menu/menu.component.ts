@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {menuMock} from '../../menu.mock';
+import {Menu} from '../../menu.model';
 
 @Component({
   selector: 'app-menu',
@@ -6,6 +8,8 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+
+  items: Menu = menuMock;
 
   constructor() { }
 
