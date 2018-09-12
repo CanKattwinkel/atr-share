@@ -9,6 +9,7 @@ import {MenuModule} from './common/menu/menu.module';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {faBars, faCoffee} from '@fortawesome/free-solid-svg-icons';
 import {library} from '@fortawesome/fontawesome-svg-core';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 // add single icons:
@@ -28,6 +29,7 @@ library.add(faBars, faCoffee);
     MatSidenavModule,
     MenuModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

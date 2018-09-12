@@ -1,5 +1,18 @@
 <mat-sidenav-container class="page" autosize="">
   <div class="content">
+
+
+    <form [formGroup]="form">
+      <input type="text" formControlName="time">
+    </form>
+
+
+    <pre>
+      Form is Valid: {{form.valid}} <br>
+      Form value: {{form.value | json  }} <br>
+    </pre>
+
+
     <router-outlet></router-outlet>
   </div>
   <mat-sidenav class="sidenav" opened="true" mode="side">

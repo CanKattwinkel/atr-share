@@ -5,6 +5,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 import {merge, of, Subject, timer} from 'rxjs';
 import {animationFrame} from 'rxjs/internal/scheduler/animationFrame';
 import {repeat, takeUntil} from 'rxjs/operators';
+import {FormControl} from '@angular/forms';
 
 const animationDuration = 250;
 
