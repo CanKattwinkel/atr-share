@@ -251,3 +251,27 @@ COMMIT!
 8.4 Done!
 
 COMMIT! 
+
+
+9. Benutze Materials Mixins
+9.1 Erstelle die Komponent ColorPanel (eignes Modul unter Common)
+9.2 In sie soll Content injiziert werden können, nutze dafür Transclusion mit ng-content
+9.3 Füge folgenden Mixin Aufruf hinzu, leite mit deiner Klasse `_AppPanelMixinBase` ab und erfülle die Konstruktorsignatur
+
+    ```ts
+    
+    /** @docs-private */
+    export class AppColorPanelBase {
+      constructor(public _elementRef: ElementRef) {
+      }
+    }
+    
+    export const _AppPanelMixinBase = mixinColor(AppColorPanelBase);
+    
+    ```
+9.4 Füge den Input hinzu, da das Feld bereits existiert bereits daher benötigst du nur `inputs: ['color'],` in der Component Decoration oder du überschreibst das Feld der Parent Class (Typ: `ThemePalette`).
+9.5 Binde die Componente im HomeComponent 3x ein und benutze color={primary, accent, warn}
+9.6 Setze jeweils einen P Tag mit Text in die neu eingebundene Komponente
+9.7 Implementiere die dazu notwendigen CSS Selektoren im color-panel.component (`.mat-primary`, `.mat-accent`, `.mat-warn`), Beachte: die Klasse wird auf dem Host gesetzt.
+9.8 Verwende jeweils `mat-contrast` und `mat-color` aus `@import "~@angular/material/theming";`
+9.9 An das Warn Theme kommst du in der `_colors.scss` Datei, erstelle hier die Variable  `$app-warn` und fülle sie über `map-get` :  `$app-theme, warn`

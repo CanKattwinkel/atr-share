@@ -1,0 +1,27 @@
+@import "~@angular/material/theming";
+@import "../../../styling/material/colors";
+
+:host {
+
+  padding: 6px 6px 0px;
+  display: block;
+  margin-bottom: 15px;
+  position: relative;
+
+  &.mat-primary {
+    color:  mat-contrast($app-primary, 500);
+    background-color:  mat-color($app-primary, 500);
+  }
+
+  &.mat-accent {
+    color:  mat-contrast($app-accent, 500);
+    background-color:  mat-color($app-accent, 500);
+  }
+
+
+  &.mat-warn{
+    color:  mat-contrast($app-warn, 500);
+    background-color:  mat-color($app-warn, 500);
+  }
+
+}

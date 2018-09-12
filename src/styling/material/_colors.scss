@@ -84,5 +84,6 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 //$app-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
 
 
-$background:  map-get($app-theme, background);
-$foreground:  map-get($app-theme, foreground);
+$app-background:  map-get($app-theme, background);
+$app-foreground:  map-get($app-theme, foreground);
+$app-warn:  map-get($app-theme, warn);
