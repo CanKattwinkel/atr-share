@@ -15,7 +15,7 @@ export class AppComponent {
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group(
       {
-        time: null
+        time: '08:00'
       }
     );
   }

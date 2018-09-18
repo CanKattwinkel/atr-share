@@ -3,13 +3,13 @@
 
 
     <form [formGroup]="form">
-      <input type="text" formControlName="time">
+      <app-timepicker formControlName="time"></app-timepicker>
     </form>
 
 
-    <pre>
-      Form is Valid: {{form.valid}} <br>
+    <pre>Form is Valid: {{form.valid}} <br>
       Form value: {{form.value | json  }} <br>
+      <br><br>Control Errors: {{form.get('time').errors | json}}
     </pre>
 
 

@@ -10,6 +10,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {faBars, faCoffee} from '@fortawesome/free-solid-svg-icons';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {ReactiveFormsModule} from '@angular/forms';
+import {TimepickerModule} from './common/timepicker/timepicker.module';
 
 
 // add single icons:
@@ -30,6 +31,7 @@ library.add(faBars, faCoffee);
     MenuModule,
     FontAwesomeModule,
     ReactiveFormsModule,
+    TimepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
